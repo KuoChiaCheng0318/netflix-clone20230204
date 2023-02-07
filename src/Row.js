@@ -21,7 +21,7 @@ function Row({title, fetchUrl, isLargeRow}) {
         fetchData();
     }, [fetchUrl])
 
-    // console.log(movies);
+    console.log(movies);
 
     const opts= {
         height: "390",
@@ -37,7 +37,7 @@ function Row({title, fetchUrl, isLargeRow}) {
         } else{
             // movieTrailer(movie?.name || "")
             // console.log(movie?.title);
-            movieTrailer( movie?.title  || "")
+            movieTrailer( movie?.title  || movie?.name )
             .then((url) => {
                 // console.log(url);
                 const urlParams = new URLSearchParams(new URL(url).search);
